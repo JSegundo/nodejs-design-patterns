@@ -7,6 +7,9 @@ export class TaskQueue {
 
   pushTask (task) {
     this.queue.push(task)
+    console.log('Tasks in queue:', this.queue.map(t => t.toString()))
+    // Or even simpler, just the length
+    console.log('Queue length:', this.queue.length)
     process.nextTick(this.next.bind(this))
     return this
   }

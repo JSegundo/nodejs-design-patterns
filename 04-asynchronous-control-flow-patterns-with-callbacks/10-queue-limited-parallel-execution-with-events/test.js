@@ -43,3 +43,9 @@ function task2 (cb) {
 queue
   .pushTask(task1)
   .pushTask(task2)
+
+//   Notice that in case of an error, we are deliberately keeping the queue running. We
+// are not stopping other tasks in progress, nor removing any pending tasks. This is
+// quite common with queue-based systems. Errors are expected to happen and rather
+// than letting the system crash on these occasions, it is generally better to identify
+// errors and to think about retry or recovery strategies.
