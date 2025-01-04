@@ -24,6 +24,7 @@ function download (url, filename) {
 }
 
 function spiderLinks (currentUrl, content, nesting, queue) {
+  console.log('spiderLinks', currentUrl,nesting)
   if (nesting === 0) {
     return Promise.resolve()
   }
@@ -36,6 +37,7 @@ function spiderLinks (currentUrl, content, nesting, queue) {
 
 const spidering = new Set()
 function spiderTask (url, nesting, queue) {
+  console.log('spiderTask', url)
   if (spidering.has(url)) {
     return Promise.resolve()
   }
@@ -43,7 +45,7 @@ function spiderTask (url, nesting, queue) {
 
   const filename = urlToFilename(url)
 
-  return queue
+  return queue // 1. You give TaskQueue your task (package):
     .runTask(() => {
       return fsPromises.readFile(filename, 'utf8')
         .catch((err) => {
@@ -59,6 +61,12 @@ function spiderTask (url, nesting, queue) {
 }
 
 export function spider (url, nesting, concurrency) {
+  console.log('spider' ,url, nesting, concurrency)
   const queue = new TaskQueue(concurrency)
   return spiderTask(url, nesting, queue)
 }
+
+// In production code, you can use the package p-limit (available
+// at nodejsdp.link/p-limit) to limit the concurrency of a set of
+// tasks. The package essentially implements the pattern we have just
+// shown but wrapped in a slightly different API.

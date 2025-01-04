@@ -1,7 +1,7 @@
 import { join, extname } from 'path'
 import { URL } from 'url'
 import slug from 'slug'
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio'
 
 function getLinkUrl (currentUrl, element) {
   const parsedLink = new URL(element.attribs.href || '', currentUrl)

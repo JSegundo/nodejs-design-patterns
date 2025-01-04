@@ -1,11 +1,11 @@
-import { promises as fsPromises } from 'fs'
+import { promises as fsPromises } from 'fs' // an already promisified version of the core fs API == all the fs functions already promisified.
 import { dirname } from 'path'
 import superagent from 'superagent'
 import mkdirp from 'mkdirp'
 import { urlToFilename, getPageLinks } from './utils.js'
 import { promisify } from 'util'
 
-const mkdirpPromises = promisify(mkdirp)
+const mkdirpPromises = promisify(mkdirp) // 2. We manually promisify the mkdirp() function.
 
 function download (url, filename) {
   console.log(`Downloading ${url}`)

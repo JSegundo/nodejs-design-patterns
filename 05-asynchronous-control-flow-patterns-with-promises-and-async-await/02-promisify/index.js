@@ -23,3 +23,8 @@ randomBytesP(32)
   .then(buffer => {
     console.log(`Random bytes: ${buffer.toString()}`)
   })
+
+// or also:
+
+// const data = await randomBytesP(32)
+// console.log(`Random bytes: ${data.toString()}`)
