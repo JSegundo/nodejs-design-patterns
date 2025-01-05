@@ -8,7 +8,7 @@ function delayError (milliseconds) {
 
 async function errorCaught () {
   try {
-    return await delayError(1000)
+    return await delayError(1000) // Awaiting the  promise ensures that the error is caught
   } catch (err) {
     console.error('Error caught by the async function: ' +
       err.message)

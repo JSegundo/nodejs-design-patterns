@@ -20,6 +20,6 @@ async function playingWithErrors (throwSyncError) {
 }
 
 // throws a synchronous error
-playingWithErrors(true)
+// playingWithErrors(true)
 // awaited Promise will reject
 playingWithErrors(false)
