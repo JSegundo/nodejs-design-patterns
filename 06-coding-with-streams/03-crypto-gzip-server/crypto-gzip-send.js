@@ -22,6 +22,7 @@ const httpRequestOptions = {
     'X-Initialization-Vector': iv.toString('hex')
   }
 }
+// An initialization vector (IV) is a random or pseudorandom number used in encryption to add randomness to the encryption process. It's like a starting point for the encryption that changes each time you encrypt something, even if you're encrypting the same data with the same key.
 
 const req = request(httpRequestOptions, (res) => {
   console.log(`Server response: ${res.statusCode}`)

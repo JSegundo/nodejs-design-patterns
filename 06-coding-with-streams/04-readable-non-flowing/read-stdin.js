@@ -9,3 +9,6 @@ process.stdin
     }
   })
   .on('end', () => console.log('End of stream'))
+
+// node read-stdin.js
+// && just type stuff and press enter => .on('readable') will fire and be processed (read)
