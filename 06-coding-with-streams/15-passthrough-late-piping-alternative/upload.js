@@ -21,3 +21,10 @@ export function createUploadStream (filename) {
 
   return connector
 }
+
+// Creates a PassThrough stream that acts as a connector
+// Starts the HTTP upload immediately but data flows later
+// Returns the stream right away so you can pipe data to it
+// The actual upload happens as data flows through the PassThrough
+
+// It's like creating a pipe and hooking it up to the server before you actually start pouring water (data) through it.

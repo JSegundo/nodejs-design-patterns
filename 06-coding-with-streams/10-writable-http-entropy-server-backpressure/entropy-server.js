@@ -23,3 +23,13 @@ const server = createServer((req, res) => {
 server.listen(8080, () => {
   console.log('listening on http://localhost:8080')
 })
+
+// In Writable streams, the
+// highWaterMark property is the limit of the internal buffer size, beyond which the
+// write() method starts returning false, indicating that the application should now
+// stop writing. When the buffer is emptied, the drain event is emitted, communicating
+// that it's safe to start writing again. This mechanism is called backpressure.
+
+// ②
+// 16 KB minus 1 byte, which is very close to the
+// default highWaterMark limit.

@@ -15,3 +15,6 @@ const server = createServer((req, res) => {
 server.listen(8080, () => {
   console.log('listening on http://localhost:8080')
 })
+
+// The HTTP server that we created writes into the res object, which is an instance of
+// http.ServerResponse and also a Writable stream

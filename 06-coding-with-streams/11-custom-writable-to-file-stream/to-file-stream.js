@@ -15,3 +15,11 @@ export class ToFileStream extends Writable {
       .catch(cb)
   }
 }
+
+
+// Other options accepted by Writable are as follows:
+
+// •highWaterMark (the default is 16 KB): This controls the backpressure limit.
+// •decodeStrings (defaults to true): This enables the automatic decoding of
+  // strings into binary buffers before passing them to the _write() method. This
+  // option is ignored in object mode.

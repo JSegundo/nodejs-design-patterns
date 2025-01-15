@@ -8,3 +8,4 @@ randomStream
   .on('end', () => {
     console.log(`Produced ${randomStream.emittedBytes} bytes of random data`)
   })
+// Produced 425984 bytes of random data
