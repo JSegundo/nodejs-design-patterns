@@ -1,9 +1,10 @@
 Exercises
-•
+•done
 5.1 Dissecting Promise.all(): Implement your own version of Promise.
 all() leveraging promises, async/await, or a combination of the two.
 The function must be functionally equivalent to its original counterpart.
 
+pending:
 •5.2 TaskQueue with promises: Migrate the TaskQueue class internals from
 promises to async/await where possible. Hint: you won't be able to use
 async/await everywhere.
