@@ -17,5 +17,9 @@
   "engines": {
     "node": ">=14"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "dependencies": {
+    "audit": "^0.0.6",
+    "fix": "^0.0.6"
+  }
 }

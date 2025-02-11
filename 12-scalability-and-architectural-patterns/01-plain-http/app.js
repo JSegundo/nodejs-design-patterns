@@ -10,3 +10,5 @@ const server = createServer((req, res) => {
 })
 
 server.listen(8080, () => console.log(`Started at ${pid}`))
+
+// npx autocannon -c 200 -d 10 http://localhost:8080
