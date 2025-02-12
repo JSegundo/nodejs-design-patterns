@@ -9,3 +9,5 @@ const server = createServer((req, res) => {
 
 const port = Number.parseInt(process.env.PORT || process.argv[2]) || 8080
 server.listen(port, () => console.log(`Started at ${pid}`))
+
+// nginx -c ${PWD}/nginx.conf
