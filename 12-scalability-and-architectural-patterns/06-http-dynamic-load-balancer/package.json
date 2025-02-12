@@ -4,12 +4,12 @@
   "description": "",
   "main": "app.js",
   "type": "module",
-  "scripts": {
+"scripts": {
     "start": "echo \"Error: no test specified\" && exit 1",
     "start:consul": "consul agent -dev",
-    "start:apps": "forever start -f --killSignal=SIGINT app.js api-service && forever start -f --killSignal=SIGINT app.js api-service && forever start -f --killSignal=SIGINT app.js webapp-service",
-    "start:loadBalancer": "forever start -f --killSignal=SIGINT loadBalancer.js",
-    "stop": "forever stopall",
+    "start:apps": "pm2 start ecosystem.config.cjs --only 'api-service-1,api-service-2,webapp-service'",
+    "start:loadBalancer": "pm2 start ecosystem.config.cjs --only loadBalancer",
+    "stop": "pm2 delete all",
     "benchmark": "autocannon -c 200 -d 10 http://localhost:8080"
   },
   "keywords": [],
@@ -17,7 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "consul": "^0.37.0",
-    "forever": "^3.0.0",
     "http-proxy": "^1.18.1",
     "nanoid": "^3.1.10",
     "portfinder": "^1.0.26"

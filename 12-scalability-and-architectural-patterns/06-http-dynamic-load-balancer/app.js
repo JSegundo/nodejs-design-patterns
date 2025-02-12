@@ -53,3 +53,9 @@ main().catch((err) => {
   console.error(err)
   process.exit(1)
 })
+
+
+// Start Consul with npm run start:consul.
+// Start your services with npm run start:apps.
+// Start the load balancer with npm run start:loadBalancer.
+// Test the setup using curl or the Consul UI.
